@@ -24,7 +24,7 @@ def read(*names, **kwargs):
 
 setup(
     name='biopipe',
-    version='0.1.0',
+    version='0.1.1',
     license='MIT license',
     description='Pipeable commandline utilities for simple bioinformatics research.',
     long_description='%s\n%s' % (
@@ -67,6 +67,7 @@ setup(
     ],
     install_requires=[
         # eg: 'aspectlib==1.1.1', 'six>=1.7',
+        read('requirements.txt').splitlines()
     ],
     extras_require={
         # eg:
@@ -76,6 +77,8 @@ setup(
     entry_points={
         'console_scripts': [
             'biopipe = biopipe.cli:main',
+            'ensg2symbol = biopipe.gene:ensg2symbol',
+            'symbol2ensg = biopipe.gene:symbol2ensg'
         ]
     },
 )
