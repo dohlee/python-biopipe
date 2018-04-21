@@ -67,7 +67,12 @@ setup(
     ],
     install_requires=[
         # eg: 'aspectlib==1.1.1', 'six>=1.7',
-        read('requirements.txt').splitlines()
+        'certifi==2018.4.16',
+        'chardet==3.0.4',
+        'idna==2.6',
+        'mygene==3.0.0',
+        'requests==2.18.4',
+        'urllib3==1.22',
     ],
     extras_require={
         # eg:
