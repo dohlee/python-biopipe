@@ -6,6 +6,7 @@ class BasicTransformer:
     def transform():
         raise NotImplementedError
 
+
 class CompositeTransformer:
     def __init__(self, childTransformer=None):
         self.childTransformer = childTransformer
@@ -13,13 +14,15 @@ class CompositeTransformer:
     def transform():
         raise NotImplementedError
 
+
 class ListTransformer(BasicTransformer):
     def __init__(self):
-        super(Transformer, self).__init__()
+        super(ListTransformer, self).__init__()
 
     @staticmethod
     def transform(string):
         return string.splitlines()
+
 
 class FileReadTransformer(CompositeTransformer):
     def __init__(self, childTransformer=None):

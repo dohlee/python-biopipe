@@ -1,6 +1,7 @@
 from functools import wraps
 import sys
 
+
 def Pipe(pipe_transformer, argument_transformer):
     def wrapper(func):
         @wraps(func)
