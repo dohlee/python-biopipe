@@ -1,9 +1,10 @@
 from collections import OrderedDict
-from contexts import no_output
-from decorators import Pipe
-from transformers import ListTransformer, FileReadTransformer
 import mygene
 import sys
+
+from biopipe.contexts import no_output
+from biopipe.decorators import Pipe
+from biopipe.transformers import ListTransformer, FileReadTransformer
 
 HOMO_SAPIENS_SPECIES_ID = 9606
 mg = mygene.MyGeneInfo()
