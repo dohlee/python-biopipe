@@ -1,5 +1,5 @@
-from functools import wraps
 import sys
+from functools import wraps
 
 
 def Pipe(pipe_transformer, argument_transformer):
