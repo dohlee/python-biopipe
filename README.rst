@@ -54,7 +54,7 @@ Overview
 
 .. end-badges
 
-Pipeable commandline utilities for simple bioinformatics research.
+Pipeable commandline utilities for simple bioinformatics research. Currently on version 0.1.4.
 
 * Free software: MIT license
 
