@@ -14,7 +14,6 @@ Overview
         | |codecov|
     * - package
       - | |version| |wheel| |supported-versions| |supported-implementations|
-        | |commits-since|
 
 .. |docs| image:: https://readthedocs.org/projects/python-biopipe/badge/?style=flat
     :target: https://readthedocs.org/projects/python-biopipe
@@ -39,10 +38,6 @@ Overview
 .. |version| image:: https://img.shields.io/pypi/v/biopipe.svg
     :alt: PyPI Package latest release
     :target: https://pypi.python.org/pypi/biopipe
-
-.. |commits-since| image:: https://img.shields.io/github/commits-since/dohlee/python-biopipe/v0.1.4.svg
-    :alt: Commits since latest release
-    :target: https://github.com/dohlee/python-biopipe/compare/v0.1.4...master
 
 .. |wheel| image:: https://img.shields.io/pypi/wheel/biopipe.svg
     :alt: PyPI Wheel
