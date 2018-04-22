@@ -24,7 +24,7 @@ def read(*names, **kwargs):
 
 setup(
     name='biopipe',
-    version='0.1.4',
+    version='0.1.5',
     license='MIT license',
     description='Pipeable commandline utilities for simple bioinformatics research.',
     long_description='%s\n%s' % (
