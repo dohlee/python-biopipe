@@ -1,16 +1,14 @@
 # -*- coding: utf-8 -*-
 from __future__ import print_function
 
-import subprocess
-
-# Define block characters.
+import shutil  # Define block characters.
 FULL_BLOCK = u'\u2588'
 BLOCK_CHARACTERS = ['', u'\u258F', u'\u258E', u'\u258D', u'\u258C', u'\u258B', u'\u258A', u'\u2589', FULL_BLOCK]
 
 
 def get_terminal_width():
     """Return the width of current open terminal."""
-    return int(subprocess.check_output(['stty', 'size']).split()[1])
+    return shutil.get_terminal_size().columns
 
 
 def bar(length):

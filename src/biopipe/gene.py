@@ -1,4 +1,5 @@
 import shutil
+import sys
 from collections import OrderedDict
 
 import gseapy
@@ -63,6 +64,9 @@ def enrichr_go_bp(symbols=None, cutoff=0.05):
                                         outdir=dummy_directory,
                                         no_plot=True)
     except Exception:
+        print('An error occurred during running enrichr. Please try again later.')
+        sys.exit(1)
+    finally:
         shutil.rmtree(dummy_directory)
 
     result_dataframe = enrichr_result.res2d
