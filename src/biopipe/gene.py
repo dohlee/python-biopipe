@@ -1,9 +1,13 @@
+import shutil
 from collections import OrderedDict
 
+import gseapy
 import mygene
+import numpy as np
 
 from biopipe.contexts import no_output
 from biopipe.decorators import Pipe
+from biopipe.termchart import terminal_bar_chart
 from biopipe.transformers import FileReadTransformer
 from biopipe.transformers import ListTransformer
 
@@ -48,3 +52,23 @@ def symbol2ensg(symbols=None):
             best_result[query_symbol] = ensembl_id
 
     print('\n'.join(best_result.values()))
+
+
+@Pipe(pipe_transformer=ListTransformer, argument_transformer=FileReadTransformer(ListTransformer))
+def enrichr_go_bp(symbols=None, cutoff=0.05):
+    dummy_directory = 'biopipe-enrichr-dummy'
+    try:
+        enrichr_result = gseapy.enrichr(gene_list=symbols,
+                                        gene_sets='GO_Biological_Process_2017b',
+                                        outdir=dummy_directory,
+                                        no_plot=True)
+    except Exception:
+        shutil.rmtree(dummy_directory)
+
+    result_dataframe = enrichr_result.res2d
+    p_value_filtered_result = result_dataframe[result_dataframe['Adjusted P-value'] < cutoff]
+    transformed_p_values = [-np.log10(p) for p in p_value_filtered_result['Adjusted P-value'].values]
+    terms = p_value_filtered_result['Term'].values
+
+    data = list(zip(terms, transformed_p_values))[:10]
+    terminal_bar_chart(data, title='%s [-log10(p)]' % enrichr_result.gene_sets, sort=True)

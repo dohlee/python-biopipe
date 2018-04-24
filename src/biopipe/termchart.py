@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from __future__ import print_function
+
 import subprocess
 
 # Define block characters.
@@ -46,7 +47,7 @@ def get_layout(data, width_limit):
     return label_width, bar_width
 
 
-def terminal_bar_chart(data, title=None, sorted=False, width_limit=120):
+def terminal_bar_chart(data, title=None, sort=False, width_limit=180):
     """Print bar chart to the terminal.
     Data should be formatted like:
 
@@ -66,7 +67,7 @@ def terminal_bar_chart(data, title=None, sorted=False, width_limit=120):
         label3 | ▇▇▇▇▇▇▇ value3
         label4 | ▇▇ value4
 
-    if sorted=True, values will be sorted in *descending* order.
+    if sort=True, values will be sorted in *descending* order.
     Basically this funtion assumes wide terminal so that
     the chart can have width of exactly 120 characters.
     """
@@ -79,8 +80,9 @@ def terminal_bar_chart(data, title=None, sorted=False, width_limit=120):
     bar_normalizer = bar_width / max(values)
 
     print()
+    print()
     if title is not None:
-        print(title.center(width_limit), end=' ')
+        print(title.center(width_limit))
     else:
         print('Bar chart'.center(width_limit))
     print('-' * width_limit)
@@ -92,5 +94,6 @@ def terminal_bar_chart(data, title=None, sorted=False, width_limit=120):
         normalized_length = value * bar_normalizer
         print(label.rjust(label_width), end='')
         print(' | ', end='')
-        print(bar(normalized_length), value)
+        print(bar(normalized_length), round(value, 2))
+    print()
     print()
