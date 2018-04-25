@@ -24,7 +24,7 @@ def read(*names, **kwargs):
 
 setup(
     name='biopipe',
-    version='0.1.5',
+    version='0.1.9',
     license='MIT license',
     description='Pipeable commandline utilities for simple bioinformatics research.',
     long_description='%s\n%s' % (
@@ -49,7 +49,6 @@ setup(
         'Operating System :: Microsoft :: Windows',
         'Programming Language :: Python',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.3',
         'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
@@ -70,6 +69,7 @@ setup(
         'mygene==3.0.0',
         'requests==2.18.4',
         'urllib3==1.22',
+        'gseapy==0.9.3',
     ],
     extras_require={
         # eg:
@@ -80,7 +80,8 @@ setup(
         'console_scripts': [
             'biopipe = biopipe.cli:main',
             'ensg2symbol = biopipe.gene:ensg2symbol',
-            'symbol2ensg = biopipe.gene:symbol2ensg'
+            'symbol2ensg = biopipe.gene:symbol2ensg',
+            'enrichr-go-bp = biopipe.gene:enrichr_go_bp',
         ]
     },
 )
