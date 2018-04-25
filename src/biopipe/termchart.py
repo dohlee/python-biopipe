@@ -74,7 +74,9 @@ def terminal_bar_chart(data, title=None, sort=False, width_limit=180):
     the chart can have width of exactly 120 characters.
     """
     width = get_terminal_width(width_limit=width_limit)
-    assert width >= width_limit, "Terminal is too narrow to print out the chart!"
+    if width >= width_limit:
+        print("Terminal is too narrow to print out the chart!")
+        return
 
     values = [d[1] for d in data]
 
