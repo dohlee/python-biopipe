@@ -6,9 +6,13 @@ FULL_BLOCK = u'\u2588'
 BLOCK_CHARACTERS = ['', u'\u258F', u'\u258E', u'\u258D', u'\u258C', u'\u258B', u'\u258A', u'\u2589', FULL_BLOCK]
 
 
-def get_terminal_width():
+def get_terminal_width(width_limit):
     """Return the width of current open terminal."""
-    return shutil.get_terminal_size().columns
+    try:
+        return shutil.get_terminal_size().columns
+    except AttributeError:
+        # When this function is invoked through piping, sometimes it throws AttributeError.
+        return width_limit
 
 
 def bar(length):
@@ -69,8 +73,8 @@ def terminal_bar_chart(data, title=None, sort=False, width_limit=180):
     Basically this funtion assumes wide terminal so that
     the chart can have width of exactly 120 characters.
     """
-    width = get_terminal_width()
-    assert width > width_limit, "Terminal is too narrow to print out the chart!"
+    width = get_terminal_width(width_limit=width_limit)
+    assert width >= width_limit, "Terminal is too narrow to print out the chart!"
 
     values = [d[1] for d in data]
 

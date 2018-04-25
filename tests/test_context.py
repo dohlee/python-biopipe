@@ -1,6 +1,6 @@
 import biopipe.contexts
 
 
-def no_output_test():
+def test_no_output():
     with biopipe.contexts.no_output():
         print('No output!')

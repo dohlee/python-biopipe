@@ -1,7 +1,7 @@
 import biopipe.termchart
 
 
-def terminal_bar_chart_test():
+def test_terminal_bar_chart():
     data = [
         ('Looooooooong label A', 125.2),
         ('Short label B', 132.3),
@@ -9,4 +9,4 @@ def terminal_bar_chart_test():
         ('D', 100.2),
     ]
 
-    biopipe.termchart.terminal_bar_chart(data, sorted=True)
+    biopipe.termchart.terminal_bar_chart(data, sort=True)

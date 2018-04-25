@@ -37,19 +37,19 @@ Overview
 
 .. |version| image:: https://img.shields.io/pypi/v/biopipe.svg
     :alt: PyPI Package latest release
-    :target: https://pypi.python.org/pypi/biopipe
+    :target: https://pypi.org/project/biopipe
 
 .. |wheel| image:: https://img.shields.io/pypi/wheel/biopipe.svg
     :alt: PyPI Wheel
-    :target: https://pypi.python.org/pypi/biopipe
+    :target: https://pypi.org/project/biopipe
 
 .. |supported-versions| image:: https://img.shields.io/pypi/pyversions/biopipe.svg
     :alt: Supported versions
-    :target: https://pypi.python.org/pypi/biopipe
+    :target: https://pypi.org/project/biopipe
 
 .. |supported-implementations| image:: https://img.shields.io/pypi/implementation/biopipe.svg
     :alt: Supported implementations
-    :target: https://pypi.python.org/pypi/biopipe
+    :target: https://pypi.org/project/biopipe
 
 
 .. end-badges
@@ -68,7 +68,7 @@ Installation
 Documentation
 =============
 
-https://python-biopipe.readthedocs.io/
+http://python-biopipe.readthedocs.io/en/latest
 
 Development
 ===========
