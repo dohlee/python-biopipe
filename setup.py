@@ -68,7 +68,7 @@ setup(
         'idna==2.6',
         'mygene==3.0.0',
         'requests==2.18.4',
-        'urllib3==1.22',
+        'urllib3==1.26.5',
         'gseapy==0.9.3',
     ],
     extras_require={
