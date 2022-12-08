@@ -63,7 +63,7 @@ setup(
     ],
     install_requires=[
         # eg: 'aspectlib==1.1.1', 'six>=1.7',
-        'certifi==2018.4.16',
+        'certifi==2022.12.7',
         'chardet==3.0.4',
         'idna==2.6',
         'mygene==3.0.0',
